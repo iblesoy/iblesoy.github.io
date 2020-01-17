@@ -1,0 +1,663 @@
+.route-default .container-header {
+  background: url(#{$baseurl}/assets//image/photo@2x.jpg) no-repeat 50% 20%;
+  background-size: cover;
+  padding: 10em 2em 2em;
+  .title__page {
+    color: #fff;
+    font-size: 4em;
+  }
+}
+.container-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3em 2em 1.5em;
+  background: $bg-gray1;
+
+  //   @include mobile {
+
+  //   }
+  @include respond-to(mini) {
+    padding: 2.2em 1em 1em;
+  }
+  .title__page {
+    font-size: 1.8em;
+    line-height: 1.3;
+    overflow: hidden;
+    text-transform: capitalize;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    @include respond-to(mini) {
+      font-size: 1.4em;
+    }
+  }
+  .breadcrumb {
+    position: absolute;
+    top: 1.3em;
+    left: 2em;
+    @include respond-to(mini) {
+      top: 0.4em;
+      left: 1em;
+    }
+    .list__breadcrumb {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      // padding-top: 1em;
+      list-style: none;
+      background-color: transparent;
+      border-radius: 0.25em;
+      .list-item__breadcrumb {
+        position: relative;
+        font-size: 0.75em;
+        color: $bg-gray5;
+        text-transform: capitalize;
+        & > a {
+          text-decoration: none;
+          color: $bg-gray5;
+        }
+        & + .list-item__breadcrumb {
+          padding-left: 1.2em;
+        }
+        & + .list-item__breadcrumb::before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0.5em;
+          top: 34%;
+          width: 1px;
+          height: 9px;
+          background: $bg-gray4;
+          transform: rotate(15deg);
+        }
+        & + .list-item__breadcrumb:hover::before {
+          text-decoration: underline;
+        }
+        & + .list-item__breadcrumb:hover::before {
+          text-decoration: none;
+        }
+        &.list-item__breadcrumb--current {
+          color: $color-main;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    white-space: nowrap;
+    .pagination-link {
+      display: block;
+      font-size: 20px;
+      height: auto;
+      padding: 15px 20px 18px;
+      text-align: left;
+      em {
+        color: inherit;
+        display: block;
+        font-size: 0.75em;
+        opacity: 0.5;
+        & > strong {
+          display: block;
+          margin-top: 2px;
+        }
+      }
+    }
+    .pagination-previous,
+    .pagination-next {
+      @extend .pagination-link;
+    }
+    .pagination-previous {
+      float: left;
+    }
+    .pagination-next {
+      float: right;
+    }
+  }
+}
+.container-body {
+  position: relative;
+  flex: 1;
+  padding: 2em;
+  img {
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+    border: 1px solid $bg-gray1;
+    padding: 1em 2em;
+  }
+
+  code,
+  .label {
+    visibility: inherit;
+    background: $bg-sub;
+    border-radius: 3px;
+    color: $color-sub-dark;
+    font-size: 90%;
+    padding: 1px 6px;
+  }
+
+  h2 {
+    @include post-heading(1.5em);
+  }
+
+  h3 {
+    @include post-heading(1.3em);
+  }
+
+  h4 {
+    @include post-heading(1.1em);
+  }
+
+  h5 {
+    @include post-heading(1em);
+  }
+  a[target="_blank"] {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    &:before {
+      content: "\f3fe";
+      font-family: "Font Awesome 5 Brands";
+      margin-right: 0.3em;
+      font-size: 0.75em;
+    }
+  }
+
+  .desc-img {
+    color: gray;
+    font-size: 85%;
+    text-align: center;
+    margin-top: -10px;
+  }
+
+  .box-result {
+    @include text-label("Result");
+    font-family: sans-serif;
+    border: 1px solid $bg-main;
+    color: black;
+    margin: 30px 0;
+	padding: 2.5em 1.875em 1.75em;
+	@include respond-to(wide){
+		padding: 2em 1.875em 1.875em;
+
+	}
+
+    a {
+      &:link,
+      &:visited {
+        // color: -webkit-link;
+        color: inherit;
+        text-decoration: underline;
+        cursor: auto;
+      }
+      &:link:active,
+      &:visited:active {
+        // color: -webkit-link;
+        color: inherit;
+      }
+    }
+
+    &:before {
+      top: -15px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  & > dl {
+    background: $bg-gray1;
+    color: $color-gray;
+    font-size: 0.95em;
+
+    dt {
+      font-weight: 700;
+      padding: 15px;
+      padding-bottom: 0;
+    }
+
+    dd {
+      padding: 15px;
+      padding-top: 0;
+
+      & + dt {
+        border-top: 1px solid white;
+      }
+    }
+  }
+  p {
+    margin: 1em 0;
+    font-size: 1em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li {
+    text-indent: -1.4em;
+    padding-left: 1.4em;
+  }
+
+  li + li {
+    margin-top: 5px;
+  }
+
+  ul {
+    list-style: circle inside;
+    margin: 1em 0;
+    padding-left: 1.1em;
+
+    ul {
+      list-style-type: circle;
+
+      ul {
+        list-style-type: square;
+      }
+    }
+
+    &.files {
+      font-family: $family-monospace;
+      font-weight: 400;
+    }
+
+    &.software {
+      @include clearfix;
+
+      list-style: none;
+      padding-left: 0;
+      text-align: center;
+
+      li {
+        float: left;
+        margin-bottom: 15px;
+        width: 50%;
+
+        img {
+          max-height: 64px;
+        }
+
+        strong {
+          display: block;
+          line-height: 1;
+          margin-top: 5px;
+        }
+
+        @include respond-to(wide) {
+          margin: 0;
+          width: 20%;
+        }
+      }
+    }
+  }
+
+  ol {
+    margin: 1em 0;
+    padding-left: 1.5em;
+  }
+
+  #markdown-toc {
+    display: none;
+    @include text-label("Table of Contents", $color-main, #fff);
+    @extend .info;
+
+    list-style-type: none;
+    padding: 2em 2em 1em;
+    margin: 0 0 1em;
+
+    ul {
+      list-style-type: none;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    margin: 4em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include respond-to(wide) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  #markdown-toc + h2 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  // Code highlight
+  // .highlighter-rouge {
+  //   margin: 30px -30px;
+  //   overflow: auto;
+  //   outline: none;
+
+  //   @include respond-to(wide) {
+  //     margin: 30px -60px;
+  //   }
+
+  //   .highlight {
+  //     code {
+  //       @include text-label;
+
+  //       background: inherit;
+  //       color: inherit;
+  //       display: block;
+  //       padding: 30px;
+  //       top: 0;
+
+  //       @include respond-to(wide) {
+  //         padding: 30px 60px;
+  //       }
+  //     }
+  //   }
+
+  //   &.language-html {
+  //     code {
+  //       @include text-label("HTML", $text-label-green, white);
+  //     }
+  //   }
+
+  //   &.language-css {
+  //     code {
+  //       @include text-label("CSS", $text-label-orange, white);
+  //     }
+  //   }
+
+  //   &.language-scss {
+  //     code {
+  //       @include text-label("Sass", $text-label-navy, white);
+  //     }
+  //   }
+
+  //   &.language-javascript {
+  //     code {
+  //       @include text-label("JavaScript", $text-label-green, white);
+  //     }
+  //   }
+
+  //   &.language-bash {
+  //     code {
+  //       @include text-label("bash", $text-label-skyblue, white);
+  //     }
+  //   }
+
+  //   &.language-c {
+  //     code {
+  //       @include text-label("C", $text-label-skyblue, white);
+  //     }
+  //   }
+
+  //   &.language-java {
+  //     code {
+  //       @include text-label("Java", $text-label-navy, white);
+  //     }
+  //   }
+
+  //   &.language-sql {
+  //     code {
+  //       @include text-label("SQL", $text-label-green, white);
+  //     }
+  //   }
+
+  //   &.language-json {
+  //     code {
+  //       @include text-label("json", $text-label-orange, white);
+  //     }
+  //   }
+
+  //   &.language-typescript {
+  //     code {
+  //       @include text-label("typescript", $text-label-navy, white);
+
+  //       .err {
+  //         background-color: transparent;
+  //       }
+  //     }
+  //   }
+  // }
+
+  .answer,
+  .important,
+  .info,
+  blockquote p,
+  blockquote ol {
+    background: rgba($color-main, 0.09);
+    border-left: 0.25em solid $color-main;
+    color: rgba(black, 0.5);
+    padding: 2.25em 1.875em 0.75em;
+  }
+
+  // .answer {
+  //   background: rgba($green, 0.1);
+  //   border-left-color: $green;
+
+  //   .question {
+  //     color: $color-gray-dark;
+  //     display: block;
+  //     font-weight: 700;
+
+  //     + br {
+  //       display: none;
+  //     }
+  //   }
+  // }
+
+  // .important {
+  //   background: rgba($red, 0.1);
+  //   border-left-color: $red;
+  // }
+
+  table {
+    font-size: 0.85em;
+    background: #fafafa;
+    width: 100%;
+    overflow: auto;
+
+    @include respond-to(medium) {
+      table-layout: fixed;
+      word-break: break-all;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 0.5em 1em;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eee;
+      font-weight: 400;
+      text-align: left;
+      // white-space: nowrap;
+
+      strong {
+        display: block;
+      }
+    }
+
+    code {
+      display: inline-block;
+      margin-bottom: 5px;
+      vertical-align: top;
+    }
+
+    pre {
+      margin: 0;
+      padding: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    @include respond-to(wide) {
+      margin: 30px 0;
+    }
+  }
+
+  // Code highlight
+  .CodeMirror {
+    margin: 30px -2.5em;
+    overflow: auto;
+    outline: none;
+    height: auto;
+    &.cm-s-default {
+      background-color: #f8f8f8;
+    }
+    code {
+      @include text-label;
+      background: inherit;
+      color: $bg-gray3;
+      display: block;
+      padding: 2.5em 1.875em 1.75em;
+      top: 0;
+      @include respond-to(wide) {
+        padding: 2em 3.75em 1.875em;
+      }
+    }
+    .language-html {
+      @include text-label("HTML", $text-label-green, white);
+    }
+    .language-css {
+      @include text-label("CSS", $text-label-orange, white);
+    }
+    .language-scss {
+      @include text-label("Scss", $text-label-navy, white);
+    }
+    .language-javascript {
+      @include text-label("JavaScript", $text-label-green, white);
+    }
+    .language-typescript {
+      @include text-label("typescript", $text-label-navy, white);
+    }
+    .language-json {
+      @include text-label("json", $text-label-orange, white);
+    }
+    .language-vue {
+      @include text-label("vue", $text-label-green, white);
+    }
+    .language-bash {
+      @include text-label("bash", $text-label-skyblue, white);
+    }
+    .language-shell {
+      @include text-label("shell", $text-label-navy, white);
+    }
+    .language-diff {
+      @include text-label("diff", $text-label-skyblue, white);
+    }
+    .language-python {
+      @include text-label("python", $text-label-navy, white);
+    }
+    .language-sql {
+      @include text-label("SQL", $text-label-green, white);
+    }
+  }
+
+  // Code highlight
+  .highlighter-rouge {
+    margin: 1.875em -1.875em;
+    overflow: auto;
+    outline: none;
+
+    @include respond-to(wide) {
+      margin: 1.875em -3.75em;
+    }
+
+    .highlight {
+      code {
+        @include text-label;
+
+        background: inherit;
+        color: inherit;
+        display: block;
+        padding: 1.875em;
+        top: 0;
+
+        @include respond-to(wide) {
+          padding: 1.875em 3.75em;
+        }
+      }
+    }
+
+    // &.language-html {
+    //   code {
+    //     @include text-label("HTML", $text-label-green, white);
+    //   }
+    // }
+
+    // &.language-css {
+    //   code {
+    //     @include text-label("CSS", $text-label-orange, white);
+    //   }
+    // }
+
+    // &.language-scss {
+    //   code {
+    //     @include text-label("Sass", $text-label-navy, white);
+    //   }
+    // }
+
+    // &.language-javascript {
+    //   code {
+    //     @include text-label("JavaScript", $text-label-green, white);
+    //   }
+    // }
+
+    // &.language-bash {
+    //   code {
+    //     @include text-label("bash", $text-label-skyblue, white);
+    //   }
+    // }
+
+    // &.language-c {
+    //   code {
+    //     @include text-label("C", $text-label-skyblue, white);
+    //   }
+    // }
+
+    // &.language-java {
+    //   code {
+    //     @include text-label("Java", $text-label-navy, white);
+    //   }
+    // }
+
+    // &.language-sql {
+    //   code {
+    //     @include text-label("SQL", $text-label-green, white);
+    //   }
+    // }
+
+    // &.language-json {
+    //   code {
+    //     @include text-label("json", $text-label-orange, white);
+    //   }
+    // }
+
+    // &.language-typescript {
+    //   code {
+    //     @include text-label("typescript", $text-label-navy, white);
+
+    //     .err {
+    //       background-color: transparent;
+    //     }
+    //   }
+    // }
+  }
+}

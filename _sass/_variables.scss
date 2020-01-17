@@ -1,0 +1,35 @@
+$baseurl: "{{ site.baseurl }}";
+$min-width: 320px;
+$header-height: 3.75em !default;
+$sidebar-width: 150px !default;
+
+// font
+
+$family-monospace: "Fira Code", "Noto Sans KR", "Inconsolata", monospace;
+
+// color
+$bg-gray0: #fdfdfd !default;
+$bg-gray1: #f5f5f5 !default;
+$bg-gray2: #e9ecef !default;
+$bg-gray3: #dee2e6 !default;
+$bg-gray4: #ced4da !default;
+$bg-gray5: #bdbdad !default;
+
+$bg-main:#fdf2f2;
+$bg-sub:#eafafd;
+
+$color-gray-light: #666;
+$color-gray: #444;
+$color-gray-dark: #222;
+$color-main-light: #ffd1d1;
+$color-main: #ff6b6b;
+$color-main-dark: #ec0041;
+$color-sub-light: #c6e5d9;
+$color-sub: #2ec4b6;
+$color-sub-dark: #159291;
+
+$text-label-yellow: #f4f1ce;
+$text-label-orange: #f16529;
+$text-label-green: #6ecd56;
+$text-label-skyblue: #33a9dc;
+$text-label-navy: #616db3;

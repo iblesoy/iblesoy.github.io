@@ -1,0 +1,55 @@
+---
+layout: default
+route: post
+---
+
+<div class="container-header">
+	<h1 class="title__page">{{ page.subtitle }}</h1>
+
+	<nav class="breadcrumb">
+		<ol class="list__breadcrumb">
+			<li class="list-item__breadcrumb list-item__breadcrumb--home"><i class="si si-home"></i> <a href='{{ site.baseurl }}/'>Home</a></li>
+			{% if page.category %}
+			<li class="list-item__breadcrumb">{{ page.category }}</li>
+			{% endif %}
+			<li class="list-item__breadcrumb list-item__breadcrumb--current">{{ page.title }}</li>
+		</ol>
+	</nav>
+
+	<div class="pagination">
+		{% if page.previous %}
+		<a class="button button-previous" href="{{ page.previous.url | relative_url }}">
+			<i class="fa fa-angle-left"></i>
+			<strong class="for-a11y">&larr; Previous{{ page.previous.title }}</strong>
+		</a>
+		{% endif %}
+
+		{% if page.next %}
+		<a class="button button-next" href="{{ page.next.url | relative_url }}">
+			<i class="fa fa-angle-right"></i>
+			<strong class="for-a11y">Next &rarr;{{ page.next.title }}</strong>
+		</a>
+		{% endif %}
+	</div>
+</div>
+
+<div class="container-body">
+	<div class="content">
+		{{ content }}
+	</div>
+	<nav class="pagination">
+		{% if page.previous %}
+		<a class="pagination-previous" href="{{ page.previous.url | relative_url }}">
+			<em>&larr; Previous</em>
+			<strong>{{ page.previous.title }}</strong>
+		</a>
+		{% endif %}
+
+		{% if page.next %}
+		<a class="pagination-next" href="{{ page.next.url | relative_url }}">
+			<em>Next &rarr;</em>
+			<strong>{{ page.next.title }}</strong>
+		</a>
+		{% endif %}
+	</nav>
+</div>

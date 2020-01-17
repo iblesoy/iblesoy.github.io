@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" class="layout-{{ page.layout | downcase }}{% if page.category %} category-{{ page.category | downcase }}{% endif %}" data-url="{{ page.url }}">
+	{%- include head.html -%}
+
+	<body>
+		<div id="wrapper">
+
+			{% include header.html %}
+			{% include aside.html %}
+
+			<main id="container">
+				{{ content }}
+			</main>
+
+			{% include footer.html %}
+		</div>
+
+		{% include script.html %}
+	</body>
+
+</html>

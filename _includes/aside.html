@@ -1,0 +1,26 @@
+<aside id="aside">
+	<div class="aside-body">
+		<nav class="nav-main">
+			<ul class="list__nav">
+				<li class="list-item__nav list-item__nav--header">POSTS</li>
+				{% for category in site.categories %}
+				<li class="list-item__nav">
+					<button class="button__directory">
+						<span class="text__nav">{{ category | first }}</span>
+					</button>
+
+					<ul class="list__nav-directory">
+						{% for post in category[1] reversed %}
+						<li class="list-item__nav">
+							{% if post.url %}
+							<a href="{{ post.url | relative_url }}" data-url="{{ post.url }}" class="link__nav">{{ post.title | strip_html }}</a>
+							{% endif %}
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+</aside>

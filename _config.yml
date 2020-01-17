@@ -1,0 +1,14 @@
+name: envyz GROUND.
+url : /pages/envyz710/reference
+baseurl: /pages/envyz710/reference
+description: A Javascript reference
+lang: ko
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
+permalink: /:categories/:title/
+sass:
+ style: compressed
