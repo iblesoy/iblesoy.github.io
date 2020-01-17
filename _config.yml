@@ -1,7 +1,7 @@
-name: envyz GROUND.
-url : /pages/envyz710/reference
-baseurl: /pages/envyz710/reference
-description: A Javascript reference
+name: iblesoy
+url : https://iblesoy.github.io/
+baseurl: https://iblesoy.github.io/
+description: 
 lang: ko
 markdown: kramdown
 kramdown:
